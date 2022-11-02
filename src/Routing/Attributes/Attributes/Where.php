@@ -10,7 +10,7 @@ use ReflectionClass;
 #[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 class Where extends BaseWhere
 {
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         foreach ($endpoints->getAllPaths() as $path) {
             $path->where = array_merge($path->where, $this->values);

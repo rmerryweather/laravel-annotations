@@ -16,7 +16,7 @@ class Middleware extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method)
+    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method): void
     {
         if ($endpoint->hasPaths()) {
             foreach ($endpoint->getPaths() as $path) {
@@ -30,7 +30,7 @@ class Middleware extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         foreach ($endpoints as $endpoint) {
             foreach ((array) $this->value as $middleware) {

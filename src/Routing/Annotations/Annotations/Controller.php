@@ -14,7 +14,7 @@ class Controller extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         if ($this->prefix) {
             $this->prefixEndpoints($endpoints);

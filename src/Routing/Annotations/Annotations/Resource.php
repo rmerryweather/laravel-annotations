@@ -24,7 +24,7 @@ class Resource extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         $endpoints->push(new ResourceEndpoint([
             'reflection' => $class, 'name' => $this->value, 'names' => (array) $this->names,

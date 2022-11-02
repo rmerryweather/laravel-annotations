@@ -35,7 +35,7 @@ abstract class Meta implements ArrayAccess
      *
      * @return void
      */
-    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method)
+    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method): void
     {
         //
     }
@@ -48,7 +48,7 @@ abstract class Meta implements ArrayAccess
      *
      * @return void
      */
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         //
     }
@@ -72,7 +72,7 @@ abstract class Meta implements ArrayAccess
      *
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->values[$offset];
     }
@@ -85,7 +85,7 @@ abstract class Meta implements ArrayAccess
      *
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->values[$offset] = $value;
     }
@@ -97,7 +97,7 @@ abstract class Meta implements ArrayAccess
      *
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->values[$offset]);
     }

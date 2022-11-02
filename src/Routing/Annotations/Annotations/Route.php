@@ -12,7 +12,7 @@ abstract class Route extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method)
+    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method): void
     {
         $endpoint->addPath(new Path(
             strtolower(class_basename(get_class($this))), $this->domain, $this->value,

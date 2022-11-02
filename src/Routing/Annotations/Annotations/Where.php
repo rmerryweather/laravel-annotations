@@ -16,7 +16,7 @@ class Where extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method)
+    public function modify(MethodEndpoint $endpoint, ReflectionMethod $method): void
     {
         foreach ($endpoint->getPaths() as $path) {
             $path->where = array_merge($path->where, (array) $this->values);
@@ -26,7 +26,7 @@ class Where extends Meta
     /**
      * {@inheritdoc}
      */
-    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class)
+    public function modifyCollection(EndpointCollection $endpoints, ReflectionClass $class): void
     {
         foreach ($endpoints->getAllPaths() as $path) {
             $path->where = array_merge($path->where, $this->value);
